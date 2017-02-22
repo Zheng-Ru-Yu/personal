@@ -11,6 +11,12 @@
  	            fillball("drawing4", $('#drawing4').data('percent'), $('#drawing4').data('color'));
  	            fillball("drawing5", $('#drawing5').data('percent'), $('#drawing5').data('color'));
  	            fillball("drawing6", $('#drawing6').data('percent'), $('#drawing6').data('color'));
+ 	            fillball("drawing8", $('#drawing8').data('percent'), $('#drawing8').data('color'));
+ 	            fillball("drawing9", $('#drawing9').data('percent'), $('#drawing9').data('color'));
+ 	            fillball("drawing10", $('#drawing10').data('percent'), $('#drawing10').data('color'));
+ 	            fillball("drawing11", $('#drawing11').data('percent'), $('#drawing11').data('color'));
+ 	            fillball("drawing12", $('#drawing12').data('percent'), $('#drawing12').data('color'));
+ 	            fillball("drawing13", $('#drawing13').data('percent'), $('#drawing13').data('color'));
  	            flag = true;
  	        }
  	    });
@@ -79,24 +85,22 @@
  	$('.axle').on('mouseout', function() {
  	    move();
  	});
- 	console.log(-parseInt($('#time-line').css("right")));
- 	console.log($('#time-line').width() / 2);
+ 	// console.log($('#time-line').width() / 2);
 
  	function move() {
  	    timer1 = setInterval(function() {
- 	        // console.log(54);
-
  	        $('#time-line').css({
  	            'right': parseInt($('#time-line').css("right")) - 1
  	        });
 
+ 	// console.log(-parseInt($('#time-line').css("right")));
 
- 	        if (-parseInt($('#time-line').css("right")) >= $('#time-line').width() / 2) {
+ 	        if (-parseInt($('#time-line').css("right")) >= $('#time-line').width()/2-1) {
  	            // console.log(123);
  	            $('#time-line').css({
  	                'right': '3px'
  	            });
  	        }
 
- 	    }, 3);
+ 	    }, 25);
  	};
