@@ -4,7 +4,25 @@
  	        var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
  	        var iBodyHeight = $('body').height();
 
- 	        if (iScrollTop >= (iBodyHeight + 200) && flag == false) {
+			var sUserAgent = navigator.userAgent.toLowerCase();
+			var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+			var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+			var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+			var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+			var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+			var bIsAndroid = sUserAgent.match(/android/i) == "android";
+			var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+			var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+			// document.writeln("您的浏览设备为：");
+			if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+				var sHeight = 10;
+				// console.log(iBodyHeight);
+			} else {
+				var sHeight = iBodyHeight + 200;
+			}
+
+
+ 	        if (iScrollTop >= sHeight && flag == false) {
  	            fillball("drawing1", $('#drawing1').data('percent'), $('#drawing1').data('color'));
  	            fillball("drawing2", $('#drawing2').data('percent'), $('#drawing2').data('color'));
  	            fillball("drawing3", $('#drawing3').data('percent'), $('#drawing3').data('color'));

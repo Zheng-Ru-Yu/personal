@@ -26,17 +26,11 @@ $(function() {
 				var iBodyHeight = $('body').height() / 2;
 				var rn = Math.ceil((iScrollTop - 10) / iBodyHeight);
 				console.log(rn);
-				// var n = Math.ceil(iScrollTop / iBodyHeight);
 				$('#nav li:eq(' + rn + ')').children().addClass('nav-active').parent().siblings().children().removeClass('nav-active');
-				// $('body').css({
-				// 	'marginTop':'50px'
-				// });
+				
 			} else {
-				// console.log(11);
 				var iBodyHeight = $('body').height();
 				var rn = Math.ceil((iScrollTop - 300) / iBodyHeight);
-				// console.log(rn);
-				// var n = Math.ceil(iScrollTop / iBodyHeight);
 				$('#nav li:eq(' + rn + ')').children().addClass('nav-active').parent().siblings().children().removeClass('nav-active');
 			}
 
